@@ -28,6 +28,9 @@ export default {
         letterSpacing2: "2.7px",
         letterSpacing3: "2.35px",
       },
+      backdropFilter: {
+        "blur-сustom": "blur(1.5rem)",
+      },
     },
   },
   plugins: [],
