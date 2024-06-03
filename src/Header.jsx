@@ -18,7 +18,9 @@ const Header = () => {
         </div>
         {/* Burger */}
         <button
-          className={`block justify-self-end ${isMenuOpen ? "hidden" : ""}`}
+          className={`block transition-opacity duration-500 ${
+            isMenuOpen ? "opacity-0" : "opacity-100 delay-300"
+          }`}
           onClick={toggleMenu}
         >
           <img src={iconBurger} alt="menu icon" className="h-8 w-8" />
@@ -29,7 +31,7 @@ const Header = () => {
       <div
         className={`flex flex-col fixed top-0 right-0 h-screen w-2/3 bg-clrWhite/5 backdrop-blur-sm transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-400 ease-in-out`}
+        } transition-transform duration-700 ease-in-out`}
       >
         <button onClick={toggleMenu} className="h-8 w-8 self-end m-6">
           <img src={iconClose} className="h-8 w-8" alt="close icon" />
