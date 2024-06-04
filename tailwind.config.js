@@ -22,6 +22,12 @@ export default {
         fs400: "0.9375rem",
         fs300: "1rem",
         fs200: "0.875rem",
+
+        fs850: "6.25rem",
+        fs750: "3.5rem",
+        fs650: "2rem",
+        fs550: "1.75rem",
+        fs450: "1.125rem",
       },
       letterSpacing: {
         letterSpacing1: "4.75px",
