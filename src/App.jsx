@@ -14,7 +14,7 @@ function App() {
 
       {/* Background Image for Tablet Screens */}
       <div
-        className="hidden md:block lg:hidden absolute inset-0 bg-cover bg-center bg-no-repeat -z-10"
+        className="hidden sm:block lg:hidden absolute inset-0 bg-cover bg-center bg-no-repeat -z-10"
         style={{ backgroundImage: `url(${bgImageTabletScreen})` }}
       ></div>
 

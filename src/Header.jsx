@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 import logo from "./assets/shared/logo.svg";
 import iconBurger from "./assets/shared/icon-hamburger.svg";
 import iconClose from "./assets/shared/icon-close.svg";
@@ -30,7 +31,7 @@ const Header = () => {
 
       {/* Menu */}
       <div
-        className={`md:hidden flex flex-col fixed top-0 right-0 h-screen w-2/3 bg-clrWhite/5 backdrop-blur-sm transform ${
+        className={`md:hidden flex flex-col fixed top-0 right-0 h-screen w-2/3 bg-clrWhite/8 backdrop-blur-lg transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-700 ease-in-out`}
       >
@@ -41,22 +42,22 @@ const Header = () => {
         <div className="h-screen flex self-center justify-center">
           <ul className="flex flex-col gap-9 mt-9">
             <li>
-              <a className="font-sansCond uppercase tracking-letterSpacing2 text-clrLight text-xl">
+              <a className="menu-page text-xl">
                 <span className="text-clrLight">00 </span>Home
               </a>
             </li>
             <li>
-              <a className="font-sansCond uppercase tracking-letterSpacing2 text-clrLight text-xl">
+              <a className="menu-page text-xl">
                 <span className="text-clrLight">01 </span>Destination
               </a>
             </li>
             <li>
-              <a className="font-sansCond uppercase tracking-letterSpacing2 text-clrLight text-xl">
+              <a className="menu-page text-xl">
                 <span className="text-clrLight">02 </span>Crew
               </a>
             </li>
             <li>
-              <a className="font-sansCond uppercase tracking-letterSpacing2 text-clrLight text-xl">
+              <a className="menu-page text-xl">
                 <span className="text-clrLight">03 </span>Technology
               </a>
             </li>
@@ -74,27 +75,19 @@ const Header = () => {
         {/* Logo */}
 
         {/* Menu */}
-        <div className=" bg-clrWhite/5 backdrop-blur-sm absolute top-0 right-0">
+        <div className=" bg-clrWhite/5 backdrop-blur-lg absolute top-0 right-0">
           <ul className="flex gap-8 p-8">
-            <li className="group">
-              <a className="font-sansCond font-light uppercase tracking-letterSpacing2 text-clrLight text-fs450 group-hover:border-b-2 group-hover:border-clrLight pb-8 cursor-pointer">
-                Home
-              </a>
+            <li>
+              <a className="menu-page text-fs450">Home</a>
             </li>
-            <li className="group">
-              <a className="font-sansCond font-light uppercase tracking-letterSpacing2 text-clrLight text-fs450 group-hover:border-b-2 group-hover:border-clrLight pb-8 cursor-pointer">
-                Destination
-              </a>
+            <li>
+              <a className="menu-page text-fs450">Destination</a>
             </li>
-            <li className="group">
-              <a className="font-sansCond font-light uppercase tracking-letterSpacing2 text-clrLight text-fs450 group-hover:border-b-2 group-hover:border-clrLight pb-8 cursor-pointer">
-                Crew
-              </a>
+            <li>
+              <a className="menu-page text-fs450">Crew</a>
             </li>
-            <li className="group">
-              <a className="font-sansCond font-light uppercase tracking-letterSpacing2 text-clrLight text-fs450 group-hover:border-b-2 group-hover:border-clrLight pb-8 cursor-pointer">
-                Technology
-              </a>
+            <li>
+              <a className="menu-page text-fs450">Technology</a>
             </li>
           </ul>
         </div>
@@ -105,33 +98,43 @@ const Header = () => {
       {/* DESKTOP SCREENS */}
       <nav className="hidden lg:flex justify-between items-center relative">
         {/* Logo */}
-        <div className="h-14 w-14 m-12">
+        <div className="h-14 w-14 m-14">
           <img src={logo} alt="space tourism logo" />
         </div>
         {/* Logo */}
 
         {/* Menu */}
-        <div className=" bg-clrWhite/5 backdrop-blur-sm absolute top-6 right-0">
-          <ul className="flex gap-12 p-8">
-            <li className="group">
-              <a className="font-sansCond font-light uppercase tracking-letterSpacing2 text-clrWhite text-xl text-md group-hover:border-b-2 group-hover:border-clrLight pb-8 cursor-pointer">
-                <span className="text-clrWhite font-normal">00 </span> Home
+        <div className=" bg-clrWhite/5 backdrop-blur-lg absolute top-8 right-0 ">
+          <ul className="flex gap-clamp px-clamp-large pt-8 pb-8">
+            <li>
+              <a className="menu-page ">
+                <span className="text-clrWhite font-bold text-fs200 mr-2">
+                  00
+                </span>
+                Home
               </a>
             </li>
-            <li className="group">
-              <a className="font-sansCond font-light uppercase tracking-letterSpacing2 text-clrWhite text-xl text-md group-hover:border-b-2 group-hover:border-clrLight pb-8 cursor-pointer">
-                <span className="text-clrWhite font-normal">01 </span>{" "}
+            <li>
+              <a className="menu-page">
+                <span className="text-clrWhite font-bold text-fs200 mr-2">
+                  01
+                </span>
                 Destination
               </a>
             </li>
-            <li className="group">
-              <a className="font-sansCond font-light uppercase tracking-letterSpacing2 text-clrWhite text-xl group-hover:border-b-2 group-hover:border-clrLight pb-8 cursor-pointer">
-                <span className="text-clrWhite font-normal">02 </span> Crew
+            <li>
+              <a className="menu-page">
+                <span className="text-clrWhite font-bold text-fs200 mr-2">
+                  02
+                </span>
+                Crew
               </a>
             </li>
-            <li className="group">
-              <a className="font-sansCond font-light uppercase tracking-letterSpacing2 text-clrWhite text-xl group-hover:border-b-2 group-hover:border-clrLight pb-8 cursor-pointer">
-                <span className="text-clrWhite font-normal">03 </span>{" "}
+            <li>
+              <a className="menu-page">
+                <span className="text-clrWhite font-bold text-fs200 mr-2">
+                  03
+                </span>
                 Technology
               </a>
             </li>

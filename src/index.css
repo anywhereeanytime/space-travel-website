@@ -7,3 +7,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.menu-page {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  letter-spacing: 2.5px;
+  color: hsl(0, 0%, 100%);
+  padding-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.menu-page:hover {
+  border-bottom-width: 3.5px;
+  border-color: hsl(231, 77%, 90%);
+}
+
+/* Стили для псевдоэлемента ::after */
+.menu::after {
+  content: "";
+  display: block;
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin-right: -2.5rem;
+  background: hsl(0, 0%, 100%);
+  order: 1;
+}
+
+/* Медиа-запросы для отображения только на средних и больших экранах */
+@media (min-width: 768px) {
+  .menu::after {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu::after {
+    display: none;
+  }
+}

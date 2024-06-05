@@ -15,19 +15,7 @@ export default {
       },
       fontSize: {
         fs900: "clamp(5rem, 8vw + 1rem, 9.375rem)",
-        fs800: "3.5rem",
-        fs700: "1.5rem",
-        fs600: "1rem",
-        fs500: "1rem",
-        fs400: "0.9375rem",
-        fs300: "1rem",
-        fs200: "0.875rem",
-
-        fs850: "6.25rem",
-        fs750: "3.5rem",
-        fs650: "2rem",
-        fs550: "1.75rem",
-        fs450: "1.125rem",
+        fs200: "1.2rem",
       },
       letterSpacing: {
         letterSpacing1: "4.75px",
@@ -37,7 +25,36 @@ export default {
       backdropFilter: {
         "blur-сustom": "blur(1.5rem)",
       },
+      padding: {
+        "clamp-small": "3rem",
+        "clamp-medium": "7vw",
+        "clamp-large": "7rem",
+      },
+      gap: {
+        "gap-min": "1.5rem",
+        "gap-max": "3.5rem",
+        "gap-dynamic": "5vw",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".gap-clamp": {
+          gap: "1.5rem",
+        },
+        "@screen md": {
+          ".gap-clamp": {
+            gap: "5vw",
+          },
+        },
+        "@screen lg": {
+          ".gap-clamp": {
+            gap: "3.5rem",
+          },
+        },
+      };
+      addUtilities(newUtilities, ["responsive"]);
+    },
+  ],
 };
