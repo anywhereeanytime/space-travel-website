@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 import logo from "./assets/shared/logo.svg";
 import iconBurger from "./assets/shared/icon-hamburger.svg";
@@ -12,7 +13,7 @@ const Header = () => {
 
   return (
     /* PHONE */
-    <header className="h-screen relative">
+    <header className="relative">
       <nav className="md:hidden flex justify-between items-center p-6 ">
         {/* Logo */}
         <div className="h-10 w-10">
@@ -31,7 +32,7 @@ const Header = () => {
 
       {/* Menu */}
       <div
-        className={`md:hidden flex flex-col fixed top-0 right-0 h-screen w-2/3 bg-clrWhite/8 backdrop-blur-lg transform ${
+        className={`md:hidden flex flex-col fixed top-0 right-0 h-screen w-2/3 z-10 bg-clrWhite/8 backdrop-blur-lg transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-700 ease-in-out`}
       >
@@ -42,24 +43,24 @@ const Header = () => {
         <div className="h-screen flex self-center justify-center">
           <ul className="flex flex-col gap-9 mt-9">
             <li>
-              <a className="menu-page text-xl">
+              <Link to="/" className="menu-page text-xl">
                 <span className="text-clrLight">00 </span>Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="menu-page text-xl">
+              <Link to="/destination" className="menu-page text-xl">
                 <span className="text-clrLight">01 </span>Destination
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="menu-page text-xl">
+              <Link to="/crew" className="menu-page text-xl">
                 <span className="text-clrLight">02 </span>Crew
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="menu-page text-xl">
+              <Link to="/technology" className="menu-page text-xl">
                 <span className="text-clrLight">03 </span>Technology
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -78,16 +79,24 @@ const Header = () => {
         <div className=" bg-clrWhite/5 backdrop-blur-lg absolute top-0 right-0">
           <ul className="flex gap-8 p-8">
             <li>
-              <a className="menu-page text-fs450">Home</a>
+              <Link to="/home" className="menu-page text-fs450">
+                Home
+              </Link>
             </li>
             <li>
-              <a className="menu-page text-fs450">Destination</a>
+              <Link to="/destination" className="menu-page text-fs450">
+                Destination
+              </Link>
             </li>
             <li>
-              <a className="menu-page text-fs450">Crew</a>
+              <Link to="/crew" className="menu-page text-fs450">
+                Crew
+              </Link>
             </li>
             <li>
-              <a className="menu-page text-fs450">Technology</a>
+              <Link to="/technology" className="menu-page text-fs450">
+                Technology
+              </Link>
             </li>
           </ul>
         </div>
@@ -96,47 +105,47 @@ const Header = () => {
       {/* TABLET SCREENS */}
 
       {/* DESKTOP SCREENS */}
-      <nav className="hidden lg:flex justify-between items-center relative">
+      <nav className="hidden lg:flex justify-between items-center menu-line pt-8">
         {/* Logo */}
-        <div className="h-14 w-14 m-14">
+        <div className="h-full ml-14 mr-8 flex-shrink-0 order-1">
           <img src={logo} alt="space tourism logo" />
         </div>
         {/* Logo */}
 
         {/* Menu */}
-        <div className=" bg-clrWhite/5 backdrop-blur-lg absolute top-8 right-0 ">
+        <div className=" bg-clrWhite/5 backdrop-blur-lg order-3 ">
           <ul className="flex gap-clamp px-clamp-large pt-8 pb-8">
             <li>
-              <a className="menu-page ">
+              <Link to="/home" className="menu-page ">
                 <span className="text-clrWhite font-bold text-fs200 mr-2">
                   00
                 </span>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="menu-page">
+              <Link to="/destination" className="menu-page">
                 <span className="text-clrWhite font-bold text-fs200 mr-2">
                   01
                 </span>
                 Destination
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="menu-page">
+              <Link to="/crew" className="menu-page">
                 <span className="text-clrWhite font-bold text-fs200 mr-2">
                   02
                 </span>
                 Crew
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="menu-page">
+              <Link to="/technology" className="menu-page">
                 <span className="text-clrWhite font-bold text-fs200 mr-2">
                   03
                 </span>
                 Technology
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

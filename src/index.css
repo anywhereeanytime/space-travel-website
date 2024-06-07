@@ -24,27 +24,89 @@
   border-color: hsl(231, 77%, 90%);
 }
 
-/* Стили для псевдоэлемента ::after */
-.menu::after {
+.menu-line::before {
   content: "";
   display: block;
   position: relative;
-  height: 1px;
+  height: 0.5px;
   width: 100%;
   margin-right: -2.5rem;
   background: hsl(0, 0%, 100%);
-  order: 1;
+  opacity: 0.3;
+  order: 2;
 }
 
-/* Медиа-запросы для отображения только на средних и больших экранах */
-@media (min-width: 768px) {
-  .menu::after {
-    display: block;
-  }
-}
-
-@media (max-width: 767px) {
-  .menu::after {
+/* Прячем линию на средних экранах */
+@media (max-width: 1024px) {
+  .menu-line::before {
     display: none;
   }
+}
+
+.grid-container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding-inline: 1rem;
+  padding-bottom: 4rem;
+}
+
+.grid-container p:not([class]) {
+  max-width: 50ch;
+}
+
+@media (min-width: 45em) {
+  .grid-container {
+    justify-self: center;
+    text-align: left;
+    column-gap: 2rem;
+    place-items: center;
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        1rem,
+        1fr
+      );
+  }
+
+  .grid-container--home {
+    /* padding-bottom: max(6rem, 20vh); */
+    align-items: center;
+  }
+
+  .grid-container--home > *:first-child {
+    grid-column: 2;
+  }
+
+  .grid-container--home > *:last-child {
+    grid-column: 3;
+  }
+}
+
+.large-button {
+  font-size: 2rem;
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 1.8em;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  text-decoration: none;
+}
+
+.large-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: hsla(0, 0%, 100%, 0.1);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 500ms linear, transform 750ms ease-in-out;
+}
+
+.large-button:hover::after,
+.large-button:focus::after {
+  opacity: 1;
+  transform: scale(1.5);
 }

@@ -15,6 +15,8 @@ export default {
       },
       fontSize: {
         fs900: "clamp(5rem, 8vw + 1rem, 9.375rem)",
+        fs400: "0.9rem",
+        fs500: "1rem",
         fs200: "1.2rem",
       },
       letterSpacing: {
